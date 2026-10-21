@@ -1,0 +1,20 @@
+{
+  "name": "معاذ AI للتعليم",
+  "short_name": "معاذ AI",
+  "description": "منصة تعليمية للفروض والحلول والاختبارات وفق المنهاج الجزائري.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7faff",
+  "theme_color": "#123b69",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

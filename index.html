@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123b69">
+  <meta name="description" content="معاذ AI للتعليم — منصة تعليمية للفروض والحلول والاختبارات وفق المنهاج الجزائري.">
+  <title>معاذ AI للتعليم</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="الصفحة الرئيسية">
+      <span class="brand-icon">م</span>
+      <span><strong>معاذ AI للتعليم</strong><small>نتعلّم اليوم لننجح غدًا</small></span>
+    </a>
+    <button class="menu-button" id="menuButton" aria-label="فتح القائمة">☰</button>
+    <nav id="mainNav">
+      <a href="#home">الرئيسية</a><a href="#library">مكتبة الفروض</a><a href="#quizzes">اختبارات تفاعلية</a><a href="#about">عن التطبيق</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow">منصة تعليمية جزائرية</span>
+        <h1>طريقك إلى النجاح يبدأ <span>من هنا</span></h1>
+        <p>ابحث عن الفروض والاختبارات والحلول، ونظّم مراجعتك حسب الطور والسنة والمادة.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#library">تصفّح الفروض</a>
+          <a class="btn secondary" href="#quizzes">جرّب الاختبارات</a>
+        </div>
+        <p class="owner">إعداد وتطوير: <strong>معاذ علي</strong></p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="book">📚</div><div class="spark spark-one">✦</div><div class="spark spark-two">✧</div>
+        <div class="art-note">تعلّم • تدرّب • تقدّم</div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="أقسام التطبيق">
+      <article><span class="stat-icon">📄</span><strong>الفروض</strong><small>ملفات منظّمة حسب المستوى</small></article>
+      <article><span class="stat-icon">✅</span><strong>الحلول</strong><small>حلول موثّقة عند توفرها</small></article>
+      <article><span class="stat-icon">🧠</span><strong>الاختبارات</strong><small>تدريب وتصحيح تفاعلي</small></article>
+    </section>
+
+    <section class="section" id="library">
+      <div class="section-heading"><div><span class="eyebrow">مكتبة منظّمة</span><h2>ابحث عن الفروض</h2><p>اختر المستوى والمادة، أو اكتب كلمة للبحث.</p></div></div>
+      <div class="filters">
+        <label>الطور الدراسي<select id="stageFilter"><option value="">كل الأطوار</option><option value="ابتدائي">ابتدائي</option><option value="متوسط">متوسط</option><option value="ثانوي">ثانوي</option></select></label>
+        <label>السنة<select id="yearFilter"><option value="">كل السنوات</option></select></label>
+        <label>المادة<select id="subjectFilter"><option value="">كل المواد</option><option>الرياضيات</option><option>اللغة العربية</option><option>اللغة الفرنسية</option><option>اللغة الإنجليزية</option><option>العلوم الطبيعية</option><option>العلوم الفيزيائية</option><option>التاريخ والجغرافيا</option><option>التربية الإسلامية</option></select></label>
+        <label class="search-label">بحث<input id="searchInput" type="search" placeholder="مثال: فرض الفصل الأول"></label>
+      </div>
+      <div id="examList" class="empty-state"><div class="empty-icon">📂</div><h3>المكتبة جاهزة لاستقبال الفروض</h3><p>لم تُضَف ملفات موثّقة بعد. لن نعرض فروضًا وهمية على أنها رسمية.</p></div>
+    </section>
+
+    <section class="section quiz-section" id="quizzes">
+      <div class="section-heading"><div><span class="eyebrow">اختبر معلوماتك</span><h2>الاختبارات التفاعلية</h2><p>سيظهر هنا التدريب المتاح مع التصحيح والعلامة.</p></div></div>
+      <div class="quiz-card"><div class="quiz-symbol">✍️</div><div><h3>مساحة الاختبارات</h3><p id="quizMessage">لا توجد اختبارات مضافة بعد. ستُضاف الأسئلة بعد مراجعتها والتحقق من الإجابات.</p></div></div>
+    </section>
+
+    <section class="section about" id="about">
+      <div><span class="eyebrow">عن المشروع</span><h2>التعليم للجميع</h2><p>«معاذ AI للتعليم» مشروع تعليمي مجاني يهدف إلى تسهيل الوصول إلى موارد المراجعة للمنهاج الجزائري. تُضاف المواد بعد التحقق من مصدرها، مع احترام حقوق أصحابها.</p></div>
+      <div class="about-badge"><span>🎓</span><strong>معاذ AI</strong><small>نتعلّم معًا</small></div>
+    </section>
+  </main>
+
+  <footer><strong>معاذ AI للتعليم</strong><span>مشروع تعليمي مجاني • إعداد معاذ علي</span><a href="#home">العودة إلى الأعلى ↑</a></footer>
+  <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+      window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {}));
+    }
+  </script>
+</body>
+</html>
