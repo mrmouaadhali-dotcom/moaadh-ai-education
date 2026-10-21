@@ -8,7 +8,8 @@ let allExams = [];
 
 async function loadExams() {
     try {
-        const response = await fetch('data/exams.json');
+        // سطر جلب البيانات الصحيح من مجلد (بيانات)
+        const response = await fetch('بيانات/exams.json');
         allExams = await response.json();
         displayExams(allExams);
     } catch (error) {
@@ -21,7 +22,7 @@ function displayExams(exams) {
     if (exams.length === 0) {
         examsList.innerHTML = `
             <div style="text-align: center; padding: 40px; color: #64748b;">
-                <p style="font-size: 1.2rem; font-weight: bold;">المكتبة جاهزة لاستقبال الفروض</p>
+                <p style="font-size: 1.2rem; font-weight: bold;">المكتبة جاهزة استقبال الفروض</p>
                 <p style="font-size: 0.9rem;">لم نُضف ملفات موثقة بعد. لن نعرض فروضاً وهمية على أنها رسمية.</p>
             </div>
         `;
@@ -49,7 +50,6 @@ function displayExams(exams) {
 function filterExams() {
     const search = searchInput ? searchInput.value.toLowerCase() : "";
     
-    // فلترة مرنة تعتمد على البحث بالاسم أو عرض كل شيء إذا كانت الخيارات فارغة
     const filtered = allExams.filter(exam => {
         return !search || exam.title.toLowerCase().includes(search) || exam.subject.toLowerCase().includes(search);
     });
