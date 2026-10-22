@@ -8,7 +8,7 @@ let allExams = [];
 
 async function loadExams() {
     try {
-        const response = await fetch('data/exams.json');
+        const response = await fetch('exams.json');
         allExams = await response.json();
         displayExams(allExams);
     } catch (error) {
@@ -30,17 +30,11 @@ function displayExams(exams) {
 
     exams.forEach(exam => {
         const examCard = document.createElement("div");
+        examCard.className = "exam-card";
         examCard.innerHTML = `
-            <div class="exam-item" style="border: 1px solid #e2e8f0; padding: 15px; border-radius: 8px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; background-color: #fff; direction: rti;">
-                <div>
-                    <span style="font-size: 0.85rem; color: #3b82f6; font-weight: bold;">• ${exam.year}</span>
-                    <h3 style="margin: 5px 0; font-size: 1.2rem; color: #1e293b;"><a href="${exam.fileUrl}" target="_blank" style="text-decoration: none; color: inherit;">${exam.title}</a></h3>
-                    <p style="margin: 0; font-size: 0.9rem; color: #64748b;">${exam.subject} • ${exam.term}</p>
-                </div>
-                <a href="${exam.fileUrl}" target="_blank" style="background-color: #3b82f6; color: white; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 0.85rem;">
-                    تحميل
-                </a>
-            </div>
+            <h3>${exam.title}</h3>
+            <p>${exam.subject} - ${exam.year} - ${exam.term}</p>
+            <a href="${exam.fileUrl}" target="_blank">تحميل</a>
         `;
         examsList.appendChild(examCard);
     });
